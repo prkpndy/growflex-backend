@@ -15,9 +15,10 @@ const deleteUser = async (req, res) => {
 
     // TODO - How to handle failed request?
 
-    res.sendStatus(204);
+    return res.sendStatus(201);
   } catch (error) {
     console.log(error);
+    return res.sendStatus(500);
   }
 };
 

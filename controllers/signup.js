@@ -16,6 +16,7 @@ const signup = async (req, res) => {
       zip,
       areaOfInterest,
       password,
+      profilePictureName,
     } = req.body;
 
     const data = {
@@ -30,6 +31,7 @@ const signup = async (req, res) => {
       zip,
       areaOfInterest,
       password,
+      profilePicturePath: profilePictureName,
     };
 
     const user = await User.create(data);
@@ -43,6 +45,7 @@ const signup = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
+    return res.sendStatus(500);
   }
 };
 

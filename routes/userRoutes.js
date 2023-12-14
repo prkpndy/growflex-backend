@@ -6,6 +6,8 @@ const signup = require("../controllers/signup");
 const deleteUser = require("../controllers/deleteUser");
 const changePassword = require("../controllers/changePassword");
 const doesExist = require("../middlewares/doesExist");
+const getData = require("../controllers/getData");
+const updateUser = require("../controllers/updateUser");
 
 const router = express.Router();
 
@@ -54,9 +56,15 @@ router.post("/signup", doesExist, signup);
 router.post("/login", login);
 
 // deleteUser
-router.delete("/deleteUser", deleteUser);
+router.put("/deleteUser", deleteUser);
 
 // changePassword
 router.put("/changePassword", changePassword);
+
+// getData
+router.get("/getData", getData);
+
+// updateUser
+router.put("/updateUser", updateUser);
 
 module.exports = router;

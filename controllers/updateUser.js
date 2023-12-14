@@ -2,9 +2,9 @@ const db = require("../models");
 
 const User = db.users;
 
-const changePassword = async (req, res) => {
+const updateUser = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, columnName, columnValue } = req.body;
 
     const user = await User.findOne({
       where: {
@@ -14,7 +14,7 @@ const changePassword = async (req, res) => {
 
     if (user) {
       await User.update(
-        { password: password },
+        { [columnName]: columnValue },
         {
           where: {
             email: email,
@@ -33,4 +33,4 @@ const changePassword = async (req, res) => {
   }
 };
 
-module.exports = changePassword;
+module.exports = updateUser;
