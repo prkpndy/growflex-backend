@@ -21,9 +21,10 @@ app.use((req, res, next) => {
 
   if (req.method === "OPTIONS") {
     res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
-    return res.status(200);
+    res.sendStatus(200);
+  } else {
+    next();
   }
-  next();
 });
 
 app.use("/api/users", userRoutes);

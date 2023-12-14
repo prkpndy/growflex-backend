@@ -42,7 +42,7 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
       },
       areaOfInterest: {
-        type: DataTypes.STRING(128),
+        type: DataTypes.ARRAY(DataTypes.STRING(128)),
         allowNull: false,
       },
       password: {

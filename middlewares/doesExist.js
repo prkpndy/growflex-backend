@@ -12,7 +12,7 @@ const doesExist = async (req, res, next) => {
     });
 
     if (emailCheck) {
-      return res.json(409).send("Email already registered");
+      return res.status(401).send("Email already registered");
     }
 
     next();

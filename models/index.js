@@ -12,14 +12,14 @@ const sequelize = new Sequelize(
   }
 );
 
-// sequelize
-//   .authenticate()
-//   .then(() => {
-//     console.log(`---> Database connected <---`);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log(`---> Database connected <---`);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 const db = {};
 

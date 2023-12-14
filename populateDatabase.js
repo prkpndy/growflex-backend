@@ -27,7 +27,7 @@ const populateData = () => {
           table.string("state");
           table.string("city");
           table.string("zip");
-          table.string("areaOfInterest");
+          table.specificType("areaOfInterest", "text ARRAY");
           table.string("password");
           table.string("profilePictureExtension");
           table.string("profilePictureFilePath");
