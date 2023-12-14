@@ -1,0 +1,14 @@
+# node
+node_modules
+
+# IDE
+.vscode
+.idea
+
+# env
+.env
+
+# uploads
+uploads/images/*.png
+uploads/images/*.jpg
+uploads/images/*.jpeg
